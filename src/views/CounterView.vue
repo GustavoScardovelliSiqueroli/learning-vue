@@ -1,23 +1,32 @@
 <template>
-  <div
-    class=""
-    style="
-      display: flex;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-    "
-  >
-    <button @click="counter.increment" style="height: 50px; width: 80px">
+  <div class="counter-container">
+    <button @click="incrementCounterMoney" style="height: 50px; width: 80px">
       Somar 1
     </button>
     <h1>{{ counter.count }} / {{ counter.goal }}</h1>
+    <h1 :style="`opacity: ${counter.isAchieved ? 100 : 0};`">🎉</h1>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useCounterStore } from '@/stores'
+import { useMoneyStore } from '@/stores/money-store'
 const counter = useCounterStore()
+const money = useMoneyStore()
+
+function incrementCounterMoney() {
+  money.increment()
+  counter.increment()
+}
 </script>
+
+<style>
+.counter-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+</style>

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 export const useCounterStore = defineStore(
   'counter',
@@ -7,13 +7,15 @@ export const useCounterStore = defineStore(
     const count = ref(0)
     const goal = ref(10)
 
+    const isAchieved = computed(() => count.value === goal.value)
+
     function increment() {
       count.value++
-      if (count.value >= goal.value) {
-        goal.value += 10
+      if (count.value > goal.value) {
+        goal.value += Math.round(0.3 * count.value)
       }
     }
-    return { count, goal, increment }
+    return { count, goal, increment, isAchieved }
   },
   { persist: true },
 )

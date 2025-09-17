@@ -1,19 +1,24 @@
 <template>
-  <NavBar />
-  <main>
-    <RouterView />
-  </main>
+  <div class="app-container">
+    <NavBar />
+    <main class="main-container">
+      <RouterView />
+    </main>
+  </div>
 </template>
 <script setup lang="ts">
 import NavBar from '@/components/NavBar.vue'
 </script>
 <style>
-html,
-body,
-#app,
-main {
-  height: 100%;
-  min-height: 100vh;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Garante altura total da tela */
+}
+
+.main-container {
+  flex: 1; /* Ocupa o resto do espaço */
+  overflow: auto; /* Scroll se o conteúdo passar da tela */
 }
 
 * {
