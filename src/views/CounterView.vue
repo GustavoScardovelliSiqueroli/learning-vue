@@ -18,6 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '../stores/counter-store'
+import { useCounterStore } from '@/stores'
 const counter = useCounterStore()
 </script>

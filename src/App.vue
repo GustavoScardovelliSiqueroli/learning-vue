@@ -1,12 +1,12 @@
 <template>
-  <nav>
-    <RouterLink to="/"> HOME </RouterLink>
-    <RouterLink to="/counter"> COUNTER </RouterLink>
-  </nav>
+  <NavBar />
   <main>
     <RouterView />
   </main>
 </template>
+<script setup lang="ts">
+import NavBar from '@/components/NavBar.vue'
+</script>
 <style>
 html,
 body,
