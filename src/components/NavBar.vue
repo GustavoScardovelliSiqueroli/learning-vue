@@ -25,13 +25,13 @@ const money = useMoneyStore()
 
 <style scoped>
 nav {
-  background-color: gray;
+  background-color: #60686c;
+  color: #c8c3bc;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  color: white;
   font-size: 20px;
   padding: 10px;
 }
@@ -48,9 +48,14 @@ nav a {
 .nav-panel span {
   height: 35px;
   line-height: 35px;
+  font-weight: 600;
 }
 .panel-item {
   display: flex;
   gap: 2px;
+}
+.nav-pages {
+  display: flex;
+  gap: 20px;
 }
 </style>

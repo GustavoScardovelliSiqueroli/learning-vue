@@ -29,8 +29,9 @@ import NavBar from '@/components/NavBar.vue'
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  color: #333;
-  background-color: #fff;
+  color: #c8c3bc;
+  overflow-x: hidden;
+  background-color: #131516;
 }
 ul,
 ol {
@@ -41,7 +42,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
-body {
-  overflow-x: hidden;
+button {
+  background-color: #60686c;
+  color: #c8c3bc;
+  cursor: pointer;
 }
 </style>
