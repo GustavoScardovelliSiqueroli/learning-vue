@@ -3,6 +3,7 @@
     <div class="nav-pages">
       <RouterLink to="/"> HOME </RouterLink>
       <RouterLink to="/counter"> COUNTER </RouterLink>
+      <RouterLink to="/store"> STORE </RouterLink>
     </div>
     <div class="nav-panel">
       <div class="panel-item">
