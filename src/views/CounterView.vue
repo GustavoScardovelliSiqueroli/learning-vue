@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { useCounterStore } from '@/stores'
-import { useMoneyStore } from '@/stores/money-store'
+import { useMoneyStore } from '@/stores'
 const counter = useCounterStore()
 const money = useMoneyStore()
 

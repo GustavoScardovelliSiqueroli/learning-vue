@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { useMoneyStore } from '@/stores/money-store'
+import { useMoneyStore } from '@/stores'
 
 const money = useMoneyStore()
 </script>
