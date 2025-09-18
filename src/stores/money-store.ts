@@ -5,11 +5,16 @@ export const useMoneyStore = defineStore(
   'money',
   () => {
     const amount = ref(0)
-    function increment() {
+    const noteAmount = ref(0)
+
+    function increment(): void {
       amount.value++
     }
+    function noteIncrement(): void {
+      noteAmount.value++
+    }
 
-    return { amount, increment }
+    return { amount, noteAmount, increment, noteIncrement }
   },
   { persist: true },
 )

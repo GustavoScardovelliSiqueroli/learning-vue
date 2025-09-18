@@ -5,8 +5,14 @@
       <RouterLink to="/counter"> COUNTER </RouterLink>
     </div>
     <div class="nav-panel">
-      <img src="/emojis/1FA99.svg" alt="coin" />
-      <span>{{ money.amount }}</span>
+      <div class="panel-item">
+        <img src="/emojis/1FA99.svg" alt="coin" />
+        <span>{{ money.amount }}</span>
+      </div>
+      <div class="panel-item">
+        <img src="/emojis/1F311.svg" alt="black-coin" />
+        <span>{{ money.noteAmount }}</span>
+      </div>
     </div>
   </nav>
 </template>
@@ -36,10 +42,15 @@ nav a {
   display: flex;
   justify-content: flex-end;
   width: 30%;
+  gap: 5px;
 }
 .nav-panel img,
 .nav-panel span {
   height: 35px;
   line-height: 35px;
+}
+.panel-item {
+  display: flex;
+  gap: 2px;
 }
 </style>

@@ -10,12 +10,9 @@
 
 <script setup lang="ts">
 import { useCounterStore } from '@/stores'
-import { useMoneyStore } from '@/stores'
 const counter = useCounterStore()
-const money = useMoneyStore()
 
 function incrementCounterMoney() {
-  money.increment()
   counter.increment()
 }
 </script>
