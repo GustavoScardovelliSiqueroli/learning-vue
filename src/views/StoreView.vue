@@ -1,12 +1,10 @@
 <template>
   <div class="store-container">
-    <h1>STORE</h1>
     <StoreWindow
       :items="[
         {
           name: 'auto-clicker',
           title: 'Auto Clicker',
-          message: 'Auto Clicker',
           value: 40,
           amount: 1,
           currency: 'coin',
