@@ -24,13 +24,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { CurrencyType, Item } from '@/types/shop-item'
+import type { CurrencyType, ShopItem } from '@/types/shop-item'
 
 const props = defineProps<{
-  items: Item[]
+  items: ShopItem[]
 }>()
 const emit = defineEmits<{
-  buyItem: [item: Item]
+  buyItem: [item: ShopItem]
   test: [boolean]
 }>()
 
@@ -46,7 +46,7 @@ function getCurrencyImagePath(
   return '/emojis/1FA99.svg'
 }
 
-function emitBuyItem(item: Item): void {
+function emitBuyItem(item: ShopItem): void {
   emit('buyItem', item)
 }
 </script>

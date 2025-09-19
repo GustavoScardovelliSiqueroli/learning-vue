@@ -25,9 +25,11 @@
 
 <script setup lang="ts">
 import StoreWindow from '@/components/ShopWindow.vue'
-import type { Item } from '@/types/shop-item'
+import type { ShopItem } from '@/types/shop-item'
 
-function buyItem(item: Item) {}
+function buyItem(item: ShopItem) {
+  console.log(item)
+}
 </script>
 
 <style scoped>

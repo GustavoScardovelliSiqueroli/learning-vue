@@ -8,11 +8,11 @@
     <div class="nav-panel">
       <div class="panel-item">
         <img src="/emojis/1FA99.svg" alt="coin" />
-        <span>{{ money.amount }}</span>
+        <span>{{ money.coinAmount }}</span>
       </div>
       <div class="panel-item">
         <img src="/emojis/1F311.svg" alt="black-coin" />
-        <span>{{ money.noteAmount }}</span>
+        <span>{{ money.blackCoinAmount }}</span>
       </div>
     </div>
   </nav>

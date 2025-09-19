@@ -4,17 +4,30 @@ import { ref } from 'vue'
 export const useMoneyStore = defineStore(
   'money',
   () => {
-    const amount = ref(0)
-    const noteAmount = ref(0)
+    const coinAmount = ref(0)
+    const blackCoinAmount = ref(0)
 
-    function increment(): void {
-      amount.value++
+    function coinIncrement(): void {
+      coinAmount.value++
     }
-    function noteIncrement(): void {
-      noteAmount.value++
+    function blackCoinIncrement(): void {
+      blackCoinAmount.value++
+    }
+    function coinPay(payValue: number): void {
+      coinAmount.value -= payValue
+    }
+    function blackCoinPay(payValue: number) {
+      blackCoinAmount.value -= payValue
     }
 
-    return { amount, noteAmount, increment, noteIncrement }
+    return {
+      coinAmount,
+      blackCoinAmount,
+      coinIncrement,
+      blackCoinIncrement,
+      coinPay,
+      blackCoinPay,
+    }
   },
   { persist: true },
 )
