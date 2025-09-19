@@ -10,33 +10,29 @@
           <div class="item-right-info">
             <span>amount: {{ item.amount }}</span>
             <span>
-              $
               <img
                 :src="getCurrencyImagePath(item.currency)"
                 :alt="item.currency"
-              />:
+              />$:
               {{ item.value }}
             </span>
           </div>
-          <button>BUY</button>
+          <button @click="emitBuyItem(item)">BUY</button>
         </div>
-        <!-- {{ item }} -->
       </div>
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
-type CurrencyType = 'black-coin' | 'coin'
+import type { CurrencyType, Item } from '@/types/shop-item'
 
-interface Item {
-  name: string
-  title: string
-  message?: string
-  value: number
-  amount: number
-  currency: CurrencyType
-}
+const props = defineProps<{
+  items: Item[]
+}>()
+const emit = defineEmits<{
+  buyItem: [item: Item]
+  test: [boolean]
+}>()
 
 function getCurrencyImagePath(
   currency: CurrencyType,
@@ -50,11 +46,9 @@ function getCurrencyImagePath(
   return '/emojis/1FA99.svg'
 }
 
-const props = defineProps<{
-  items: Item[]
-}>()
-
-console.log(props)
+function emitBuyItem(item: Item): void {
+  emit('buyItem', item)
+}
 </script>
 
 <style scoped>
@@ -87,7 +81,7 @@ console.log(props)
   display: flex;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  padding: 5px;
+  padding: 10px;
 }
 .window-item img {
   width: 25px;
@@ -116,5 +110,13 @@ console.log(props)
 .window-list::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+}
+button {
+  width: 70px;
+  height: 40px;
+  border: none;
+}
+button:hover {
+  background-color: #505659;
 }
 </style>

@@ -10,6 +10,20 @@
 import NavBar from '@/components/NavBar.vue'
 </script>
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #c8c3bc;
+  overflow-x: hidden;
+  background-color: #131516;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -21,18 +35,6 @@ import NavBar from '@/components/NavBar.vue'
   overflow: auto; /* Scroll se o conteúdo passar da tela */
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: sans-serif;
-  line-height: 1.5;
-  color: #c8c3bc;
-  overflow-x: hidden;
-  background-color: #131516;
-}
 ul,
 ol {
   list-style: none;
