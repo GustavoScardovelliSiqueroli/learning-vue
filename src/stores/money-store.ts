@@ -9,8 +9,8 @@ export const useMoneyStore = defineStore(
     const coinAmount = ref(0)
     const blackCoinAmount = ref(0)
 
-    function coinIncrement(): void {
-      coinAmount.value++
+    function coinIncrement(buff: number): void {
+      coinAmount.value += 1 + buff
     }
     function blackCoinIncrement(): void {
       blackCoinAmount.value++

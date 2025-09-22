@@ -31,7 +31,6 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{
   buyItem: [item: ShopItem]
-  test: [boolean]
 }>()
 
 function getCurrencyImagePath(

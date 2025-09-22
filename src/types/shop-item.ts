@@ -7,4 +7,5 @@ export interface ShopItem {
   value: number
   amount: number
   currency: CurrencyType
+  action: () => void
 }

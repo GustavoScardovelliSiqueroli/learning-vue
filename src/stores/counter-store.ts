@@ -17,7 +17,7 @@ export const useCounterStore = defineStore(
 
     function increment() {
       clicks.value++
-      moneyStore.coinIncrement()
+      moneyStore.coinIncrement(buffStore.clickValue)
       count.value +=
         (1 + buffStore.clickValue) * (1 + buffStore.clickMultiplier)
 
