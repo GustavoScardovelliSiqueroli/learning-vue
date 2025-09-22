@@ -9,6 +9,9 @@ import StoreWindow from '@/components/ShopWindow.vue'
 import type { ShopItem } from '@/types/shop-item'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
+import { useMoneyStore } from '@/stores'
+
+const moneyStore = useMoneyStore()
 
 const items: Ref<ShopItem[]> = ref([
   {
@@ -29,13 +32,14 @@ const items: Ref<ShopItem[]> = ref([
 ])
 
 function buyItem(item: ShopItem) {
-  if (item.name == 'click-value') {
-    if (item.amount > 1) {
-      item.amount--
-      return
-    }
-    items.value = items.value.filter((aItem) => aItem.name != 'click-value')
+  if (!moneyStore.pay(item.value, item.currency)) {
+    return
   }
+  if (item.amount > 1) {
+    item.amount--
+    return
+  }
+  items.value = items.value.filter((aItem) => aItem.name != item.name)
 }
 </script>
 

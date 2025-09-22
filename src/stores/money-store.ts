@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import type { Ref } from 'vue'
+import type { CurrencyType } from '@/types/shop-item'
 
 export const useMoneyStore = defineStore(
   'money',
@@ -13,11 +15,18 @@ export const useMoneyStore = defineStore(
     function blackCoinIncrement(): void {
       blackCoinAmount.value++
     }
-    function coinPay(payValue: number): void {
-      coinAmount.value -= payValue
-    }
-    function blackCoinPay(payValue: number) {
-      blackCoinAmount.value -= payValue
+    function pay(payValue: number, currency: CurrencyType): boolean {
+      let money: Ref<number>
+      if (currency == 'coin') {
+        money = coinAmount
+      } else {
+        money = blackCoinAmount
+      }
+      if (money.value < payValue) {
+        return false
+      }
+      money.value -= payValue
+      return true
     }
 
     return {
@@ -25,8 +34,7 @@ export const useMoneyStore = defineStore(
       blackCoinAmount,
       coinIncrement,
       blackCoinIncrement,
-      coinPay,
-      blackCoinPay,
+      pay,
     }
   },
   { persist: true },
